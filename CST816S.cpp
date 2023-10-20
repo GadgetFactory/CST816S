@@ -125,6 +125,10 @@ void CST816S::sleep() {
 String CST816S::gesture() {
   switch (data.gestureID) {
     case NONE:
+      if(data.event == 0)
+        return "DOWN EVENT";
+      if(data.event == 1)
+        return "UP EVENT";
       return "NONE";
       break;
     case SWIPE_DOWN:
